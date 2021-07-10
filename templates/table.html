@@ -1,0 +1,45 @@
+<!-- 
+  This is the file that contains the table to display the characters. The overall setup
+  of the page consists of a horizontal form with the five required fields as input on the top
+  and a table to display the required characters in the bottom. You are encouraged to remove
+  the display of the "ID" field in the table but this is not mandatory. The form, however, needs
+  to contain all the five fields.
+ -->
+
+{% extends 'base.html' %} {% block body %}
+
+<form method="POST">
+  {% for key in characters[0].keys() %}
+  <label for="{{key}}">{{key}}</label>
+  <input type="text" id="{{key}}" name="{{key}}" /><br />
+  {% endfor %}
+
+  <button type="submit">Add Character</button>
+</form>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        {% for key in characters[0].keys() %}
+        <th scope="col">{{key}}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in characters %}
+      <tr>
+        {% for cell in row.values() %}
+        <td>{{cell}}</td>
+        {% endfor %}
+        <td>
+          <a href="{{url_for('delete_character',id=row['_id'])}}">
+            <button>DELETE</button>
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock body %}
