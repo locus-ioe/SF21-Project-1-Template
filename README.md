@@ -12,7 +12,7 @@
     1. `api.py` for creating an API
     2. `app.py` for displaying them using `jinja` in HTML
 5. The functions in the provided files should be updated as instructed there to make a fully functioning, beautiful web app.
-6. This repo should contain the code with the deadline.
+6. This repo should contain a working code within the deadline, i.e., 15th of July.
 
 ## Project Components
 
