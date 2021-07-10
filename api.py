@@ -7,7 +7,6 @@ The required utility functions are also provided in the file itself.
 """
 
 import requests  # noqa
-
 from flask import Flask, jsonify, request  # noqa
 
 app = Flask(__name__)
